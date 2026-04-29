@@ -3,10 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-// Icons using lucide-react (install with: npm install lucide-react)
+import { MdOutlineAccountBalance } from 'react-icons/md';
 import {
-    Banknote,
     LayoutDashboard,
     Users,
     FileText,
@@ -34,33 +32,23 @@ const Navbar = () => {
 
     return (
         <>
-            {/* Desktop Top App Bar */}
-            <header className="fixed top-0 left-0 w-full z-50 bg-white border-b border-slate-200 shadow-sm">
-                <div className="flex items-center justify-between px-8 h-16">
-                    {/* Logo / Brand */}
-                    <Link href="/" className="flex items-center gap-3 group">
-                        <Banknote className="h-6 w-6 text-blue-900" />
-                        <h1 className="text-2xl font-serif italic tracking-tight text-blue-950">
-                            The Academic Curator
-                        </h1>
+            <header className="bg-white backdrop-blur-md fixed top-0 w-full z-50 shadow-sm shadow-blue-900/5 flex items-center justify-between px-8 py-4">
+                <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-6 md:px-12 lg:px-24">
+                    <Link href="/" className="flex items-center gap-3">
+                        <div className="flex items-center gap-3">
+                            <span className="material-symbols-outlined text-[#00113a] text-3xl"><MdOutlineAccountBalance /></span>
+                            <h1 className="font-serif italic text-[#00113a] text-2xl tracking-tight">The Academic Curator</h1>
+                        </div>
                     </Link>
 
-                    {/* Desktop Navigation */}
                     <nav className="hidden md:flex gap-8 items-center">
                         {navItems.map((item) => {
-                            const Icon = item.icon;
                             const active = isActive(item.href);
                             return (
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className={`
-                    font-serif italic transition-colors duration-300
-                    ${active
-                                            ? 'text-blue-900 font-semibold'
-                                            : 'text-slate-500 hover:text-amber-700'
-                                        }
-                  `}
+                                    className={`text-slate-500 font-label text-xs uppercase tracking-widest hover:text-amber-800 transition-colors cursor-pointer ${active ? 'text-amber-700 font-bold' : ''}`}
                                 >
                                     {item.name}
                                 </Link>
@@ -68,18 +56,6 @@ const Navbar = () => {
                         })}
                     </nav>
 
-                    {/* Desktop Profile Avatar */}
-                    <div className="hidden md:block">
-                        <div className="h-10 w-10 rounded-full bg-blue-900 flex items-center justify-center text-white font-bold border border-slate-200 overflow-hidden">
-                            <img
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxki6fhobCVZQNGmVBfmv3puadarxJwXdGaKMYmi0m8bFG8edHaqqirY54yKje2KKElBYhm18XTPvEoyptEcp6SQHHHUg07t3g6mS2hLlxHVarvPi6U3Dz-QbqD4ilds89nZkdHCjvv6vaQIsGNozsWMdcxAd02UeXUjlwtJvLcsTyDGt5Fc3wxATFGoKiE1A0LmdAoGcFAR3-xcPHtTvjLfzcIBnG2ktkDciWn9Wo6bNSD71tt3Ple6dniD9BuwonzsSsXhCwrn8"
-                                alt="Admin Profile"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="md:hidden p-2 rounded-md text-slate-700 hover:bg-slate-100 transition-colors"

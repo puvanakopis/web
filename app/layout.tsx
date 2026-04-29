@@ -1,6 +1,12 @@
-import type { Metadata } from "next";
 import { Newsreader, Manrope } from "next/font/google";
 import "./globals.css";
+import RouteNavbar from '@/components/RouteNavbar';
+import RouteFooter from '@/components/RouteFooter';
+
+export const metadata = {
+  title: 'The Academic Curator - Admin Panel',
+  description: 'Attendance Management System for faculty',
+};
 
 const newsreader = Newsreader({
   subsets: ["latin"],
@@ -14,22 +20,15 @@ const manrope = Manrope({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "The Academic Curator - Admin Panel",
-  description: "Attendance Management System for faculty",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="light" suppressHydrationWarning>
       <body
         className={`${newsreader.variable} ${manrope.variable} font-body bg-surface text-on-surface antialiased`}
       >
+        <RouteNavbar />
         {children}
+        <RouteFooter />
       </body>
     </html>
   );
