@@ -1,26 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  html {
+    background: var(--color-surface);
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  body {
+    min-height: max(884px, 100dvh);
+  }
 
-@media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-primary: #00113a;
+    --color-primary-container: #002366;
+    --color-secondary: #775a19;
+    --color-surface: #f9f9f9;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container: #eeeeee;
+    --color-surface-variant: #e2e2e2;
+    --color-outline-variant: #c5c6d2;
+    --color-on-surface: #1a1c1c;
+    --color-on-surface-variant: #444650;
+    --color-error: #ba1a1a;
+    --color-error-container: #ffdad6;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    line-height: 1;
+  }
+
+  .input-container input:focus~label,
+  .input-container input:not(:placeholder-shown)~label {
+    transform: translateY(-1.5rem) scale(0.85);
+    color: #775a19;
+  }
+
+  .input-container input:focus {
+    border-bottom-color: #775a19;
+    outline: none;
+  }
 }
