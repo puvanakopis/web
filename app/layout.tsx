@@ -4,7 +4,7 @@ import RouteNavbar from '@/components/RouteNavbar';
 import RouteFooter from '@/components/RouteFooter';
 
 export const metadata = {
-  title: 'The Academic Curator - Admin Panel',
+  title: 'Admin Panel',
   description: 'Attendance Management System for faculty',
 };
 

@@ -10,8 +10,8 @@ import UserGrid from '@/app/users/_components/UserGrid';
 import UserEditModal from '@/app/users/_components/UserEditModal';
 import UserPagination from '@/app/users/_components/UserPagination';
 
-import { userData, userDepartments, userTabs } from '@/app/data/user-data';
-import type { UserRecord, UserRole, UserStatus } from '@/app/data/user-data';
+import { userData, userDepartments, userTabs } from '@/data/user-data';
+import type { UserRecord, UserRole, UserStatus } from '@/data/user-data';
 
 export default function User() {
     const [activeTab, setActiveTab] = useState<UserRole>('Student');

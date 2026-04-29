@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReportSnapshot } from '@/app/data/report-data';
+import type { ReportSnapshot } from '@/data/report-data';
 
 type Props = {
     snapshot: ReportSnapshot;

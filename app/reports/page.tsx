@@ -10,13 +10,13 @@ import {
     reportDepartments,
     reportSnapshots,
     type ReportFilters as ReportFilterState,
-} from '@/app/data/report-data';
+} from '@/data/report-data';
 import ReportAnalyticsGrid from '@/app/reports/_components/ReportAnalyticsGrid';
 import ReportExportSection from '@/app/reports/_components/ReportExportSection';
 import ReportFilters from '@/app/reports/_components/ReportFilters';
 import ReportFooterSummary from '@/app/reports/_components/ReportFooterSummary';
 
-export default function ReportPage() {
+export default function Report() {
     const [departmentInput, setDepartmentInput] = useState('all');
     const [batchInput, setBatchInput] = useState('all');
     const [courseInput, setCourseInput] = useState('all');

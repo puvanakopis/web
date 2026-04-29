@@ -2,7 +2,7 @@
 
 import { UserRoundPen, UserX } from 'lucide-react';
 
-import type { UserRecord } from '../../data/user-data';
+import type { UserRecord } from '@/data/user-data';
 
 type Props = {
     user: UserRecord;

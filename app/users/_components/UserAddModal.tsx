@@ -2,7 +2,7 @@
 
 import type { Dispatch, FormEvent, SetStateAction } from 'react';
 
-import type { UserRecord, UserRole, UserStatus } from '@/app/data/user-data';
+import type { UserRecord, UserRole, UserStatus } from '@/data/user-data';
 
 type Props = {
     isOpen: boolean;

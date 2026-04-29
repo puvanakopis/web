@@ -34,7 +34,7 @@
     "app/**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-, "components/LoginNavbar.tsx", "components/Footer.tsx"  ],
+, "components/LoginNavbar.tsx", "components/Footer.tsx", "components/Sidebar.tsx"  ],
   "exclude": [
     "node_modules"
   ]
